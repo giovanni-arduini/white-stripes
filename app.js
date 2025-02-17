@@ -8,14 +8,14 @@ const stripesRouter = require("./routers/stripesRouter.js");
 app.use(express.json())
 app.use(express.static("public"))
 
-app.use("/api/stripes", stripesRouter)
+app.use("/api/stripes", stripesRouter);
 
-app.get("/", (req, res)=>{
-    res.send("Server is running")
-})
+// app.get("/", (req, res)=>{
+//     res.send("Server is running")
+// })
 
-app.use(errorsHandler)
-app.use(notFound)
+app.use(notFound);
+app.use(errorsHandler);
 
 
 app.listen(port, ()=>{

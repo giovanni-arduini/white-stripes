@@ -2,7 +2,16 @@ const connection = require('../data/db')
 
 function index(req, res){
 //recupero tutti i parcheggi
-res.json({message:"tutte le strisce",})
+
+let sql = "SELECT * FROM parcheggi"
+
+connection.query(sql, (err, stripes) => {
+    console.log(stripes);
+})
+
+if (err) return res.status(500).json({message: err.message})
+
+res.json(books)
 }
 
 function show (req, res) {
