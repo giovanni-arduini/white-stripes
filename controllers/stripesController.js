@@ -7,11 +7,10 @@ let sql = "SELECT * FROM parcheggi"
 
 connection.query(sql, (err, stripes) => {
     console.log(stripes);
+    if (err) return res.status(500).json({message: err.message})
+    
+    res.json(stripes)
 })
-
-if (err) return res.status(500).json({message: err.message})
-
-res.json(books)
 }
 
 function show (req, res) {

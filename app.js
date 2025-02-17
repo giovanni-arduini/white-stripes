@@ -10,9 +10,9 @@ app.use(express.static("public"))
 
 app.use("/api/stripes", stripesRouter);
 
-// app.get("/", (req, res)=>{
-//     res.send("Server is running")
-// })
+app.get("/", (req, res)=>{
+    res.send("Server is running")
+})
 
 app.use(notFound);
 app.use(errorsHandler);
