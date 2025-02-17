@@ -27,16 +27,6 @@ connection.query(sql, [id], (err, stripe) => {
 })
 }
 
-function showUser(req, res) {
-    const userId = parseInt(req.params.id);
-    let sql = `SELECT * FROM utenti WHERE id = ?`;
-
-    connection.query(sql, [userId], (err, user) => {
-        if (err) return res.status(500).json({ message: err.message });
-        if (user.length === 0) return res.status(404).json({ message: 'Utente non trovato' });
-        res.json(user[0]);
-    });
-}
 
 function store (req, res) {
 // segnala un nuovo parcheggio
@@ -55,4 +45,4 @@ if(err) return res.status(500).json({message: err.message})
 )
 }
 
-module.exports ={index, show, store, showUser}
+module.exports ={index, show, store}

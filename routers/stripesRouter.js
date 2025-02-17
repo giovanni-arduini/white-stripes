@@ -8,6 +8,5 @@ router.get("/:id", stripesController.show);
 
 router.post("/", stripesController.store);
 
-router.get("/users", stripesController.showUser)
 
 module.exports = router;
