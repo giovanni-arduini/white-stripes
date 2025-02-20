@@ -36,7 +36,7 @@ const {latitudine, longitudine, descrizione, id_utente} = req.body;
 
 console.log(latitudine, longitudine, descrizione);
 
-const sql = `INSERT INTO parcheggi (latitudine, longitudine, descrizione, id_utente) VALUES (?, ?, ?, ?)`
+const sql = `INSERT INTO parkings (latitude, longitude, description, user_id) VALUES (?, ?, ?, ?)`
 
 connection.query(sql, [latitudine, longitudine, descrizione, id_utente], (err, results) =>{
 if(err) return res.status(500).json({message: err.message})
